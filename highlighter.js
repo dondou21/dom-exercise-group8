@@ -19,6 +19,62 @@ Our Algorithm:
 
 */
 
-const paragraph = document.getElementById('myParagraph');
+// The selection of the paragraphe in a variable
 
-const paragraphContent =paragraph.textContent;
+let para = document.getElementById('myParagraph');
+para = para.textContent;
+
+// Convert the string in to an an array
+
+let array = para.split('\n');
+
+let string = array.join('');
+
+//remove the special characters
+string = string.replace(/[&\/\\#,+()$~%.'":*?<>{}""]/g,);
+
+array = string.split(' ');
+
+// the object to store each word with it occurrence frequency
+let frequency = {};
+
+const n = array.length;
+let count;
+for(let i= 0; i < n; i++)
+{
+    if(frequency[array[i]] === undefined)
+        {  
+                count = 1;
+             for(let j = i+1; j < n; j++)
+             {
+                if(array[i] === array[j])
+                {
+                    count +=1;
+                }
+            }
+     frequency[array[i]] = count;
+     }
+}
+
+console.log(array);
+console.log(frequency);
+
+
+// Sort the object elements
+
+
+// let sortFrequency = [];
+
+// for(var word in frequency)
+// {
+//     sortFrequency.push(word,frequency[word]);
+// }
+
+// sortFrequency.sort(function(a,b)
+// {
+//     a[1] - b[1];
+// });
+
+// console.log(sortFrequency);
+
+
