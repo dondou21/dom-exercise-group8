@@ -62,12 +62,10 @@ console.log(frequency);
 
 // Sort the object elements
 
-// console.log(sortable);
-
 let sorted = Object.keys(frequency).sort(function(a,b){return frequency[b] - frequency[a]});
 
 // Keep just the top five
-let mostFrequency = sorted.slice(0,6);
+let mostFrequency = sorted.slice(1,6);
 
 
 // Display those most frequency words
